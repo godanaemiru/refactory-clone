@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refactory Academy - Transforming Africa's Tech Talent</title>
+    <!-- Custom Font: Using a modern sans-serif font like Inter for a clean look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- EXTERNAL CSS STYLESHEET -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- 1. NAVIGATION BAR -->
+    <header id="navbar">
+        <nav class="container">
+            <!-- Logo Placement -->
+            <div class="logo">
+                <span class="logo-text-ref">Refactory</span>
+                <span class="logo-text-academy">Academy</span>
+            </div>
+            
+            <!-- Navigation Menu Items -->
+            <ul class="nav-menu">
+                <li class="nav-item has-dropdown">
+                    <a href="#">About Us</a>
+                    <span class="dropdown-arrow"></span>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#">Courses</a>
+                    <span class="dropdown-arrow"></span>
+                </li>
+                <li class="nav-item has-dropdown">
+                    <a href="#">Financial Aid</a>
+                    <span class="dropdown-arrow"></span>
+                </li>
+                <li class="nav-item"><a href="#">Tech Talent</a></li>
+                <li class="nav-item"><a href="#">Partnerships</a></li>
+                <li class="nav-item"><a href="#">Stories</a></li>
+                <li class="nav-item"><a href="#">Contact</a></li>
+                <li class="nav-item"><a href="#">FAQs</a></li>
+            </ul>
+
+            <!-- Search Button -->
+            <button class="search-btn" aria-label="Search">
+                <!-- Simple SVG Search Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                    <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            
+            <!-- Mobile Menu Toggle (hidden on desktop) -->
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <!-- SVG Menu Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z" clip-rule="evenodd" /></svg>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 2. HERO SECTION -->
+        <section id="hero-section">
+            <div class="hero-content">
+                <!-- Main Heading -->
+                <h1 class="hero-title">Transforming Africa's Tech Talent for the Future</h1>
+                <!-- Subheading -->
+                <p class="hero-subtitle">Tech programs by and for the Tech Industry</p>
+
+                <!-- Call-to-Action Buttons (Flexbox) -->
+                <div class="cta-buttons">
+                    <a href="#" class="cta-btn cta-btn-purple">Partner with us <span class="arrow">→</span></a>
+                    <a href="#" class="cta-btn cta-btn-yellow">Explore Programs <span class="arrow">→</span></a>
+                    <a href="#" class="cta-btn cta-btn-white">Hire Talent <span class="arrow">→</span></a>
+                </div>
+            </div>
+            <!-- Background image is set via CSS -->
+        </section>
+
+        <!-- 3. ABOUT REFACTORY SECTION (CSS GRID) -->
+        <section id="about-section" class="light-bg">
+            <div class="container about-grid">
+                <!-- Left Column: Text Content -->
+                <div class="about-text-content">
+                    <h2 class="section-heading-purple">Refactory Academy</h2>
+                    <h3 class="section-subheading-teal">Empowering Uganda's Next Generation of Tech Talent</h3>
+                    
+                    <p>Refactory is a software-skilling academy based in Kampala, Uganda, founded in 2017 to transform tech talent and bridge the gap between education and industry needs. We focus on hands-on, project-based learning to cultivate world-class software developers.</p>
+
+                    <p>Refactory Academy is revolutionizing technology training by immersing students in a real-world software environment. Our industry-aligned curriculum ensures that graduates are job-ready and capable of contributing immediately to the global tech ecosystem.</p>
+
+                    <a href="#" class="cta-btn cta-btn-yellow learn-more-btn">Learn more <span class="arrow">→</span></a>
+                </div>
+
+                <!-- Right Column: Image -->
+                <div class="about-image-wrapper">
+                    <img src="/images/refactory-academy.jpg" alt="Group of Refactory students collaborating in a professional setting" class="responsive-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. FEATURED COURSES SECTION (CSS GRID) -->
+        <section id="courses-section">
+            <div class="container">
+                <p class="section-heading-teal">Start Your Dream Career!</p>
+                <h2 class="section-title-purple">Explore Featured Courses</h2>
+
+                <div class="course-grid">
+                    <!-- Card 1: Foundational Courses -->
+                    <div class="course-card">
+                        <img src="/images/foundaional-courses.jpg" alt="Students in a foundational coding class" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title-purple">Foundational Courses</h3>
+                            <p class="card-description">These courses build the essential knowledge in programming logic, fundamental data structures, and introduction to software development methodologies needed for any modern tech career.</p>
+                            <a href="#" class="cta-btn cta-btn-yellow card-link">Learn more <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Apprenticeship Course -->
+                    <div class="course-card">
+                        <img src="/images/apprenticeship.jpg" alt="Group of apprentices collaborating on a project" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title-purple">Apprenticeship Course</h3>
+                            <p class="card-description">Designed to provide aspiring software developers with real-world experience, mimicking a live team environment. Focuses on advanced skills, DevOps, and project management.</p>
+                            <a href="#" class="cta-btn cta-btn-yellow card-link">Learn more <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Advanced Courses -->
+                    <div class="course-card">
+                        <img src="/images/advanced-courses.jpeg" alt="Students reviewing advanced code on a screen" class="card-image">
+                        <div class="card-content">
+                            <h3 class="card-title-purple">Advanced Courses</h3>
+                            <p class="card-description">Go beyond the basics to develop mastery in specialized fields like Machine Learning, Cloud Engineering, or Full-Stack Architecture, preparing you for senior roles.</p>
+                            <a href="#" class="cta-btn cta-btn-yellow card-link">Learn more <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 5. FOOTER SECTION (CSS GRID) -->
+    <footer id="main-footer">
+        <div class="container footer-grid">
+            <!-- Column 1: About Refactory & Social Media -->
+            <div class="footer-col about-footer">
+                <div class="logo white-logo">
+                    <span class="logo-text-ref">Refactory</span>
+                    <span class="logo-text-academy">Academy</span>
+                </div>
+                <p>Refactory is a Tech skilling Academy focused on building world-class tech talent in Africa through industry-aligned, hands-on training programs.</p>
+                <div class="social-icons">
+                    <!-- Social Media Icons (using SVG placeholders for styling) -->
+                    <a href="#" class="social-icon facebook" aria-label="Facebook">F</a>
+                    <a href="#" class="social-icon twitter" aria-label="Twitter">T</a>
+                    <a href="#" class="social-icon instagram" aria-label="Instagram">I</a>
+                    <a href="#" class="social-icon linkedin" aria-label="LinkedIn">L</a>
+                    <a href="#" class="social-icon youtube" aria-label="YouTube">Y</a>
+                </div>
+            </div>
+
+            <!-- Column 2: Resources -->
+            <div class="footer-col">
+                <h4 class="footer-heading-teal">Resources</h4>
+                <ul>
+                    <li><a href="#">Stories</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Get in touch -->
+            <div class="footer-col">
+                <h4 class="footer-heading-teal">Get in touch</h4>
+                <div class="contact-info">
+                    <p><span class="contact-icon">📞</span> +256 (0) 393254046</p>
+                    <p><span class="contact-icon">💬</span> +256 (0) 759243109 (WhatsApp)</p>
+                    <p><span class="contact-icon">📧</span> partnerships@refactory.academy</p>
+                    <p><span class="contact-icon">📧</span> study@refactory.academy</p>
+                </div>
+            </div>
+
+            <!-- Column 4: Visit us -->
+            <div class="footer-col">
+                <h4 class="footer-heading-teal">Visit us</h4>
+                <address>Refactory Academy, 2nd Floor, Clarke International University, Kawagga Close off Kalungi Road, Muyenga</address>
+                <a href="#" class="location-link">Location <span class="arrow">→</span></a>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="copyright">
+            <p>© 2025 Refactory. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,620 @@
+/*
+ * Refactory Landing Page Clone Stylesheet
+ * Layout Techniques: CSS Grid, Flexbox
+ * Colors: #6B2D8F (Purple), #00BFA5 (Teal), #C0FF33 (Lime/Yellow)
+ */
+
+/* ------------------------------------------- */
+/* 0. ROOT VARIABLES AND BASE STYLES */
+/* ------------------------------------------- */
+:root {
+    /* Color Palette */
+    --color-primary-purple: #6B2D8F;
+    --color-accent-teal: #00BFA5;
+    --color-cta-yellow: #C0FF33;
+    --color-footer-dark: #2C1A4D;
+    --color-light-gray: #f5f5f5;
+    --color-text-dark: #333333;
+    --color-white: #ffffff;
+
+    /* Spacing */
+    --container-width: 1200px;
+    --section-padding-y: 80px;
+    --gap-spacing: 30px;
+
+    /* Typography */
+    --font-sans: 'Inter', sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    color: var(--color-text-dark);
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Base Headings & Text Styles */
+.section-heading-purple {
+    color: var(--color-primary-purple);
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.section-subheading-teal {
+    color: var(--color-accent-teal);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.section-title-purple {
+    color: var(--color-primary-purple);
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: var(--gap-spacing);
+}
+
+.light-bg {
+    background-color: var(--color-light-gray);
+}
+
+/* ------------------------------------------- */
+/* 1. NAVIGATION BAR (Flexbox) */
+/* ------------------------------------------- */
+#navbar {
+    background-color: var(--color-white);
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#navbar .container {
+    display: flex;
+    justify-content: space-between; /* Logo on left, Search on right, Menu in middle */
+    align-items: center;
+}
+
+/* Logo Styling */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.logo-text-ref {
+    color: var(--color-primary-purple);
+}
+
+.logo-text-academy {
+    color: var(--color-accent-teal);
+}
+
+/* Navigation Menu (Flexbox) */
+.nav-menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-item a {
+    color: var(--color-text-dark);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-item a:hover {
+    color: var(--color-primary-purple);
+}
+
+.has-dropdown {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-arrow::after {
+    content: 'v'; /* Simple dropdown indicator */
+    margin-left: 5px;
+    font-size: 0.7rem;
+    color: var(--color-accent-teal);
+    vertical-align: middle;
+}
+
+/* Search Button */
+.search-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-cta-yellow);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-dark);
+    transition: background-color 0.3s;
+    flex-shrink: 0;
+}
+
+.search-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.search-btn:hover {
+    background-color: #aed133;
+}
+
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+}
+
+/* ------------------------------------------- */
+/* 2. HERO SECTION */
+/* ------------------------------------------- */
+#hero-section {
+    min-height: 650px;
+    height: 80vh;
+    background: 
+        /* Overlay for text readability */
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+        /* Image Placeholder */
+        url('https://placehold.co/1920x1080/4f46e5/ffffff?text=Diverse+Students+Group+Photo') center center / cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--section-padding-y) 20px;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem); /* Responsive font size */
+    color: var(--color-white);
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    color: var(--color-white);
+    font-weight: 400;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Call-to-Action Buttons (Flexbox) */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.cta-btn {
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+}
+
+.cta-btn .arrow {
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+}
+
+.cta-btn-purple {
+    background-color: var(--color-primary-purple); /* #6B2D8F */
+    color: var(--color-white);
+    border: 2px solid var(--color-primary-purple);
+}
+
+.cta-btn-yellow {
+    background-color: var(--color-cta-yellow); /* #C0FF33 */
+    color: var(--color-text-dark);
+    border: 2px solid var(--color-cta-yellow);
+}
+
+.cta-btn-white {
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
+    border: 2px solid var(--color-white);
+}
+
+/* ------------------------------------------- */
+/* 3. ABOUT REFACTORY SECTION (CSS Grid) */
+/* ------------------------------------------- */
+#about-section {
+    padding: var(--section-padding-y) 0;
+}
+
+.about-grid {
+    display: grid;
+    /* Two-column layout: 1fr 1fr */
+    grid-template-columns: 1fr 1fr; 
+    gap: var(--gap-spacing);
+    align-items: center; /* Vertically centered content */
+}
+
+.about-text-content p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: var(--color-text-dark);
+}
+
+.learn-more-btn {
+    margin-top: 20px;
+}
+
+.about-image-wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.responsive-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ------------------------------------------- */
+/* 4. FEATURED COURSES SECTION (CSS Grid) */
+/* ------------------------------------------- */
+#courses-section {
+    padding: var(--section-padding-y) 0;
+    text-align: center;
+}
+
+.course-grid {
+    display: grid;
+    /* Three-column layout: repeat(3, 1fr) */
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-spacing);
+}
+
+/* Card Styling */
+.course-card {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: left;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card-image {
+    width: 100%;
+    height: 250px; /* Consistent image height */
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title-purple {
+    color: var(--color-primary-purple);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+    height: 70px; /* Ensure consistent card height for text */
+    overflow: hidden;
+}
+
+.card-link {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+}
+
+/* ------------------------------------------- */
+/* 5. FOOTER SECTION (CSS Grid & Flexbox) */
+/* ------------------------------------------- */
+#main-footer {
+    background-color: var(--color-footer-dark); /* #2C1A4D */
+    color: var(--color-white);
+    padding-top: var(--section-padding-y);
+}
+
+.footer-grid {
+    display: grid;
+    /* Four-column layout: repeat(4, 1fr) */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-heading-teal {
+    color: var(--color-accent-teal);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.about-footer .logo {
+    margin-bottom: 15px;
+}
+
+.about-footer p {
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+/* Footer List Links */
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 0.95rem;
+}
+
+.footer-col ul li a:hover {
+    color: var(--color-accent-teal);
+}
+
+/* Contact Info Styling */
+.contact-info p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.contact-icon {
+    font-size: 1.1rem;
+    margin-right: 8px;
+    color: var(--color-accent-teal);
+}
+
+/* Visit Us Column */
+address {
+    font-style: normal;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.location-link {
+    color: var(--color-accent-teal);
+    font-weight: 600;
+}
+
+.location-link:hover {
+    text-decoration: underline;
+}
+
+/* Social Icons (Flexbox) */
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-white);
+    transition: transform 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.facebook { background-color: #1877F2; }
+.twitter { background-color: #1DA1F2; }
+.linkedin { background-color: #0A66C2; }
+.youtube { background-color: #FF0000; }
+.instagram { 
+    /* Gradient for Instagram */
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+
+/* Copyright Section */
+.copyright {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 40px;
+    font-size: 0.85rem;
+    color: #a0a0a0;
+}
+
+
+/* ------------------------------------------- */
+/* 6. RESPONSIVE DESIGN (Media Queries) */
+/* ------------------------------------------- */
+
+/* Tablet & Smaller Desktop (max-width: 1024px) */
+@media (max-width: 1024px) {
+    /* Navbar Adjustment */
+    .nav-menu {
+        gap: 15px;
+    }
+
+    /* Hero */
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    /* Courses Grid */
+    .course-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+
+    /* Footer Grid */
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Navbar Mobile */
+    #navbar .container {
+        padding: 0 15px;
+    }
+    
+    .nav-menu {
+        display: none; /* Hide default menu */
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-white);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        z-index: 990;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--color-light-gray);
+    }
+    
+    .menu-toggle {
+        display: block; /* Show menu toggle */
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--color-text-dark);
+        width: 30px;
+        height: 30px;
+    }
+    
+    .search-btn {
+        margin-left: 10px;
+    }
+
+    /* Hero */
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .cta-btn {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    /* About Section Grid */
+    .about-grid {
+        grid-template-columns: 1fr; /* Stack columns */
+        text-align: center;
+    }
+    
+    .about-image-wrapper {
+        order: -1; /* Move image above text on mobile */
+    }
+
+    /* Courses Section Grid */
+    .course-grid {
+        grid-template-columns: 1fr; /* Stack cards into a single column */
+    }
+    
+    .course-card {
+        text-align: center;
+    }
+
+    .card-description {
+         height: auto; /* Allow height to adjust */
+    }
+
+    /* Footer Section Grid */
+    .footer-grid {
+        grid-template-columns: 1fr; /* Stack columns */
+        gap: 30px;
+    }
+    
+    .footer-col {
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .footer-col:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+}
